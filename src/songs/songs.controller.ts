@@ -1,14 +1,21 @@
-import { Controller, Get, Put, Delete, Post } from '@nestjs/common';
+import { Controller, Get, Put, Delete, Post, Body } from '@nestjs/common';
 import { SongsService, Song } from './songs.service';
+
+export interface CreateSongDTO {
+  title: string;
+  artist: string;
+}
 
 @Controller('songs')
 export class SongsController {
   constructor(private readonly songsService: SongsService) {}
   @Post()
-  create(): Song[] {
+  create(@Body() createSongSTO: CreateSongDTO): Song[] {
     const newSong: Song = {
-      title: 'Animals by Martin Garrix',
-      artist: 'Martin Garrix',
+      title: createSongSTO.title,
+      artist: createSongSTO.artist,
+      releasedDate: new Date(), // Assuming you want to set the current date as the release date
+      duration: new Date(0), // Set a default duration as a Date object (e.g., epoch)
     };
     return this.songsService.create(newSong);
   }

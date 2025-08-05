@@ -8,6 +8,14 @@ GET http://localhost:3000/songs/1
 
 ### CREATE NEW SONGS REQUEST
 POST http://localhost:3000/songs
+Content-Type: application/json
+
+{
+  "title": "Animals by Martin Garrix",
+  "artist": "Martin Garrix",
+  "releaseDate": "2013-06-16",
+  "duration": "3:08"
+}
 
 ### UPDATE SONGS REQUEST
 PUT http://localhost:3000/songs/1
