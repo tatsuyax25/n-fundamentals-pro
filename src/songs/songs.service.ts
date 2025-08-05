@@ -1,20 +1,26 @@
 import { Injectable } from '@nestjs/common';
+// Define the Song interface if not imported from elsewhere
+export interface Song {
+  title: string;
+  artist: string;
+  // add other properties as needed
+}
 
 @Injectable()
 export class SongsService {
   // Local DB
   // Local array
 
-  private readonly songs = [];
+  private readonly songs: Song[] = [];
 
-  create(song) {
+  create(song: Song): Song[] {
     // Save the song in the database
     this.songs.push(song);
     return this.songs;
   }
+
   // Find all songs
   findAll() {
-    // F
     return this.songs;
   }
 }
