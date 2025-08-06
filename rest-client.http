@@ -13,7 +13,7 @@ Content-Type: application/json
 {
   "title": "Animals by Martin Garrix",
   "artist": "Martin Garrix",
-  "releaseDate": "2013-06-16",
+  "releasedDate": "2013-06-16",
   "duration": "3:08"
 }
 

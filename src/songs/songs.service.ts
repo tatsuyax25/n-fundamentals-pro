@@ -4,8 +4,8 @@ export interface Song {
   title: string;
   artist: string;
   // add other properties as needed
-  releasedDate: Date; // Optional property for the release date
-  duration: Date; // Duration in military time format (e.g., "13:45")
+  releasedDate: string; // Optional property for the release date
+  duration: string; // Duration in military time format (e.g., "13:45")
 }
 
 @Injectable()
